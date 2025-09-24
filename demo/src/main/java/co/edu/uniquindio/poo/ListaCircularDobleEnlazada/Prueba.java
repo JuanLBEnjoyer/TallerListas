@@ -1,15 +1,15 @@
-package co.edu.uniquindio.poo.ListaSimple;
+package co.edu.uniquindio.poo.ListaCircularDobleEnlazada;
 
 public class Prueba {
     public static void main(String[] args) {
-        ListaSimple<Integer> lista = new ListaSimple<>();
-        lista.addPrimero(3);
-        lista.addUltimo(4);
-        lista.addIndex(1, 5);
+        ListaCircularDobleEnlazada<Integer> lista = new ListaCircularDobleEnlazada<>();
+        lista.agregarInicio(3);
+        lista.agregarFinal(5);
+        lista.agregar(1, 4);
         lista.imprimirLista();
         lista.modificarNodo(1, 10);
         lista.imprimirLista();
-        lista.eliminarDadoValor(10);
+        lista.eliminar(3);
         lista.imprimirLista();
         lista.ordenarLista();
         lista.imprimirLista();
@@ -18,7 +18,7 @@ public class Prueba {
             System.out.print(val + " ");
         }
         System.out.println();
-        lista.eliminarLista();
+        lista.borrarLista();
         lista.imprimirLista();
     }
 }

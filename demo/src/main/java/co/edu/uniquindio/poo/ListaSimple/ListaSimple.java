@@ -115,7 +115,7 @@ public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public void eliminarPrimero(){
-        if(!estaVacia()){
+        if(estaVacia()){
             System.out.println("La lista esta vacia");
         }else{
             nodoPrimero = nodoPrimero.getSiguiente();
@@ -124,7 +124,7 @@ public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public void eliminarUltimo(){
-        if(!estaVacia()){
+        if(estaVacia()){
             System.out.println("La lista esta vacia");
         }else{
             if(size == 1){
@@ -141,7 +141,7 @@ public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public void eliminarDadoValor(T valor){
-        if(!estaVacia()){
+        if(estaVacia()){
             System.out.println("La lista esta vacia");
         }else{
             if(nodoPrimero.getValor().equals(valor)){
@@ -166,7 +166,7 @@ public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
             System.out.println("Indice fuera de rango");
         }else{
             Nodo<T> nodoRef = nodoPrimero;
-            for(int i = 0; i < index; i++){
+            for(int i = 0; i < index-1; i++){
                 nodoRef = nodoRef.getSiguiente();
             }
             nodoRef.setValor(valor);
@@ -213,5 +213,7 @@ public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
     public Iterator<T> iterator() {
         return new ListaSimpleIterator<>(nodoPrimero);
     }
+
+    public void invertirListaRecursivo(){}
 
 }
