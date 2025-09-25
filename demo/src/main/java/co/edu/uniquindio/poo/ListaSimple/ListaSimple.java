@@ -2,6 +2,8 @@ package co.edu.uniquindio.poo.ListaSimple;
 
 import java.util.Iterator;
 
+import org.w3c.dom.Node;
+
 public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
 
     private int size;
@@ -208,12 +210,36 @@ public class ListaSimple<T extends Comparable<T>> implements Iterable<T> {
         size = 0;
     }
 
+    public void invertir() {
+        
+        if (nodoPrimero == null || nodoPrimero.getSiguiente() == null) {
+            return;
+        }
+
+        nodoPrimero = invertirRecursivo(nodoPrimero);
+    }
+
+    private Nodo<T> invertirRecursivo(Nodo<T> nodo) {
+
+        if (nodo.getSiguiente() == null) {
+            return nodo;
+        }
+
+    
+        Nodo<T> nuevoFirst = invertirRecursivo(nodo.getSiguiente());
+
+    
+        nodo.getSiguiente().setSiguiente(nodo);
+        nodo.setSiguiente(null);
+
+        return nuevoFirst; 
+    }
+
 
     @Override
     public Iterator<T> iterator() {
         return new ListaSimpleIterator<>(nodoPrimero);
     }
 
-    public void invertirListaRecursivo(){}
 
 }
