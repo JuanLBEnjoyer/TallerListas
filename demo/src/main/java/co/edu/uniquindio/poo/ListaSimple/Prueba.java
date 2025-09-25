@@ -3,22 +3,17 @@ package co.edu.uniquindio.poo.ListaSimple;
 public class Prueba {
     public static void main(String[] args) {
         ListaSimple<Integer> lista = new ListaSimple<>();
-        lista.addPrimero(3);
-        lista.addUltimo(4);
-        lista.addIndex(1, 5);
+        lista.addUltimo(10);
+        lista.addUltimo(20);
+        lista.addUltimo(30);
+        lista.addUltimo(40);
+        lista.addUltimo(50);
+
+
         lista.imprimirLista();
-        lista.modificarNodo(1, 10);
+        lista.invertir();
         lista.imprimirLista();
-        lista.eliminarDadoValor(10);
-        lista.imprimirLista();
-        lista.ordenarLista();
-        lista.imprimirLista();
-        System.out.println("Iterando:");
-        for (Integer val : lista) {
-            System.out.print(val + " ");
-        }
-        System.out.println();
-        lista.eliminarLista();
-        lista.imprimirLista();
+
+        
     }
 }
